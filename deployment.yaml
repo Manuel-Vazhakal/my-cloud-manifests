@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: vistula-app-deployment
 spec:
-  replicas: 4 # This tells the cloud to run 2 identical copies of your app for reliability
+  replicas: 6 # This tells the cloud to run 2 identical copies of your app for reliability
   selector:
     matchLabels:
       app: vistula-app
