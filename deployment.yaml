@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vistula-app-deployment
+spec:
+  replicas: 2 # This tells the cloud to run 2 identical copies of your app for reliability
+  selector:
+    matchLabels:
+      app: vistula-app
+  template:
+    metadata:
+      labels:
+        app: vistula-app
+    spec:
+      containers:
+      - name: vistula-app-container
+        # Notice we are pointing EXACTLY to your Docker Hub image!
+        image: manuel2oo3/my-cloud-app:v1 
+        ports:
+        - containerPort: 8080
