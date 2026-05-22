@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: vistula-app-deployment
 spec:
-  replicas: 6 # This tells the cloud to run 2 identical copies of your app for reliability
+  replicas: 8
   selector:
     matchLabels:
       app: vistula-app
@@ -14,7 +14,6 @@ spec:
     spec:
       containers:
       - name: vistula-app-container
-        # Notice we are pointing EXACTLY to your Docker Hub image!
         image: manuel2oo3/my-cloud-app:v1 
         ports:
         - containerPort: 8080
